@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="elienai-bg" x1="160" y1="20" x2="40" y2="180">
+      <stop offset="0%" stop-color="#52b788"/>
+      <stop offset="100%" stop-color="#2d6a4f"/>
+    </linearGradient>
+    <linearGradient id="elienai-sil" x1="100" y1="50" x2="100" y2="170">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="100" fill="url(#elienai-bg)"/>
+  <circle cx="100" cy="82" r="34" fill="url(#elienai-sil)"/>
+  <ellipse cx="100" cy="162" rx="52" ry="40" fill="url(#elienai-sil)"/>
+  <text x="100" y="96" text-anchor="middle" fill="#fff" font-family="system-ui,sans-serif" font-size="40" font-weight="800">E</text>
+</svg>

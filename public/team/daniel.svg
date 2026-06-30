@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="daniel-bg" x1="40" y1="20" x2="160" y2="180">
+      <stop offset="0%" stop-color="#40916c"/>
+      <stop offset="100%" stop-color="#1b4332"/>
+    </linearGradient>
+    <linearGradient id="daniel-sil" x1="100" y1="50" x2="100" y2="170">
+      <stop offset="0%" stop-color="#d8f3dc" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#d8f3dc" stop-opacity="0.12"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="100" fill="url(#daniel-bg)"/>
+  <circle cx="100" cy="82" r="34" fill="url(#daniel-sil)"/>
+  <ellipse cx="100" cy="162" rx="52" ry="40" fill="url(#daniel-sil)"/>
+  <text x="100" y="96" text-anchor="middle" fill="#fff" font-family="system-ui,sans-serif" font-size="40" font-weight="800">D</text>
+</svg>
