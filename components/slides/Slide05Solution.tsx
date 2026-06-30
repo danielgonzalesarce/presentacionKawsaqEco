@@ -5,7 +5,7 @@ import SlideLayout from "@/components/SlideLayout";
 import SlideHeader from "@/components/visual/SlideHeader";
 import PhoneCenterLayout from "@/components/layout/PhoneCenterLayout";
 import SidePanel from "@/components/layout/SidePanel";
-import PhoneMockup from "@/components/PhoneMockup";
+import PrototypeCarousel from "@/components/visual/PrototypeCarousel";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 
 const steps = [
@@ -20,6 +20,7 @@ export default function Slide05Solution() {
       <SlideHeader slide={5} />
 
       <PhoneCenterLayout
+        gap="wide"
         left={
           <SidePanel
             eyebrow="Propuesta"
@@ -49,26 +50,7 @@ export default function Slide05Solution() {
             </Stagger>
           </SidePanel>
         }
-        center={
-          <div className="flex items-center justify-center gap-6 md:gap-10">
-            <PhoneMockup
-              src="/screenshots/scan.svg"
-              alt="Registra residuos"
-              label="Registra"
-              size="xl"
-              delay={0.1}
-              float
-            />
-            <PhoneMockup
-              src="/screenshots/chat.svg"
-              alt="Asistente Kaws"
-              label="Kaws"
-              size="xl"
-              delay={0.2}
-              float
-            />
-          </div>
-        }
+        center={<PrototypeCarousel />}
         right={
           <SidePanel
             variant="accent"

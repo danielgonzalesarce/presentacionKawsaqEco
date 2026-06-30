@@ -25,7 +25,7 @@ const benefits = [
 
 const screens = [
   {
-    src: "/screenshots/home.svg",
+    src: "/screenshots/home.png",
     alt: "Huella verde",
     label: "Huella verde",
     icon: Leaf,
@@ -33,7 +33,7 @@ const screens = [
     desc: "Cada familia ve su impacto acumulado en la app.",
   },
   {
-    src: "/screenshots/rewards.svg",
+    src: "/screenshots/rewards.png",
     alt: "Recompensas",
     label: "Recompensas",
     icon: Gift,
@@ -41,7 +41,7 @@ const screens = [
     desc: "Canjeables en comercios del barrio.",
   },
   {
-    src: "/screenshots/map.svg",
+    src: "/screenshots/map.png",
     alt: "Red de acopios",
     label: "Acopios",
     icon: MapPin,

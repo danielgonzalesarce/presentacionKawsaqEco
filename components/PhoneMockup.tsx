@@ -1,11 +1,13 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 type PhoneMockupProps = {
   src: string;
   alt: string;
   label?: string;
+  imageName?: string;
   size?: "sm" | "md" | "lg" | "xl";
   delay?: number;
   className?: string;
@@ -21,10 +23,15 @@ const FRAME_WIDTH: Record<NonNullable<PhoneMockupProps["size"]>, string> = {
   xl: "w-[228px] md:w-[248px]",
 };
 
+function fileNameFromSrc(src: string) {
+  return src.split("/").pop() ?? "imagen.png";
+}
+
 export default function PhoneMockup({
   src,
   alt,
   label,
+  imageName,
   size = "md",
   delay = 0,
   className = "",
@@ -32,6 +39,17 @@ export default function PhoneMockup({
   noEntryAnimation = false,
   float = false,
 }: PhoneMockupProps) {
+  const fileName = imageName ?? fileNameFromSrc(src);
+  const [imageOk, setImageOk] = useState(false);
+
+  useEffect(() => {
+    setImageOk(false);
+    const probe = new Image();
+    probe.onload = () => setImageOk(true);
+    probe.onerror = () => setImageOk(false);
+    probe.src = src;
+  }, [src]);
+
   const Figure = noEntryAnimation ? "figure" : motion.figure;
   const figureProps = noEntryAnimation
     ? {}
@@ -43,28 +61,30 @@ export default function PhoneMockup({
 
   const device = (
     <div className={`iphone-device relative ${FRAME_WIDTH[size]}`}>
-      <span className="iphone-btn-silent" aria-hidden />
-      <span className="iphone-btn-volume-up" aria-hidden />
-      <span className="iphone-btn-volume-down" aria-hidden />
-      <span className="iphone-btn-power" aria-hidden />
-
       <div className="iphone-frame">
         <div className="iphone-screen">
           <div className="iphone-island" aria-hidden>
             <span className="iphone-island-cam" />
           </div>
 
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={src}
-            alt={alt}
-            className="iphone-screen-img"
-            loading="eager"
-            draggable={false}
-          />
+          {imageOk ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={src}
+              alt={alt}
+              className="iphone-screen-img"
+              loading="eager"
+              draggable={false}
+            />
+          ) : (
+            <div className="iphone-placeholder">
+              <span className="iphone-placeholder-tag">colocarimagen</span>
+              <span className="iphone-placeholder-name">{fileName}</span>
+            </div>
+          )}
 
-          <div className="iphone-screen-shine" aria-hidden />
-          <div className="iphone-home-bar" aria-hidden />
+          {imageOk && <div className="iphone-screen-shine" aria-hidden />}
+          {imageOk && <div className="iphone-home-bar" aria-hidden />}
         </div>
       </div>
     </div>
@@ -72,7 +92,6 @@ export default function PhoneMockup({
 
   const showcase = (
     <div className="phone-showcase">
-      <div className="phone-showcase-glow" aria-hidden />
       {float ? (
         <motion.div
           animate={{ y: [0, -6, 0] }}
@@ -89,7 +108,6 @@ export default function PhoneMockup({
       ) : (
         device
       )}
-      <div className="phone-showcase-shadow" aria-hidden />
     </div>
   );
 
