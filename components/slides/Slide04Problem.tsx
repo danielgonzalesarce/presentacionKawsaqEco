@@ -48,7 +48,7 @@ export default function Slide04Problem() {
         }
         center={
           <PhoneMockup
-            src="/screenshots/map.png"
+            src="/screenshots/prototype/10-mapa.jpeg"
             alt="Sin ruta clara para reciclar"
             label="Sin ruta clara"
             size="xl"

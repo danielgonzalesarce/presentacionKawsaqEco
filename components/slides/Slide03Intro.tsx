@@ -50,7 +50,7 @@ export default function Slide03Intro() {
         center={
           <div className="flex items-center justify-center gap-6 md:gap-10">
             <PhoneMockup
-              src="/screenshots/home.png"
+              src="/screenshots/prototype/07-home.jpeg"
               alt="Tu impacto diario"
               label="Tu impacto"
               size="xl"
@@ -58,7 +58,7 @@ export default function Slide03Intro() {
               float
             />
             <PhoneMockup
-              src="/screenshots/scan.png"
+              src="/screenshots/prototype/08-scan.jpeg"
               alt="Recicla en segundos"
               label="Recicla fácil"
               size="xl"
